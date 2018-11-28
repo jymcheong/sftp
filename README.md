@@ -1,8 +1,6 @@
 # Changes
 
-Combined https://github.com/tomstockton modifications to https://github.com/atmoz/sftp/tree/alpine so as to have logging.
-
-To log failure SSH attempts (eg. ssh brute-forcing), start docker with
+Took the necessary stuff from https://github.com/tomstockton to merge into https://github.com/atmoz/sftp/tree/alpine so as to log ssh brute-force attempts:
 
 ```
 docker run --log-driver syslog --log-opt syslog-address=tcp://YOURSYSLOGHOST:SYSLOGPORT \ ...
