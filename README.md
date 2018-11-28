@@ -8,7 +8,13 @@ To log failure SSH attempts (eg. ssh brute-forcing), start docker with
 docker run --log-driver syslog --log-opt syslog-address=tcp://YOURSYSLOGHOST:SYSLOGPORT \ ...
 ```
 
+## Build Docker Image First
 
+`docker build -t YOURTAG .`
+
+So let's say the syslog server is 192.168.0.129
+
+`docker run --log-driver syslog --log-opt syslog-address=tcp://192.168.0.129:5514 -v /Users/jymcheong/1waySFTP/logs:/home/foo/upload -p 3333:22 -d YOURTAG foo:pass:1001`
 
 # SFTP
 
