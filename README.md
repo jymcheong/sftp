@@ -14,7 +14,7 @@ So let's say the syslog server is 192.168.0.129, use the new image:
 `docker run --log-driver syslog --log-opt syslog-address=tcp://192.168.0.129:5514 -v /Users/jymcheong/1waySFTP/logs:/home/foo/upload -p 3333:22 -d YOURTAG foo:pass:1001`
 
 ## Limitations
-With Alpine rsyslog, somehow behaved differently from Ubuntu rsyslog. The sftp events are not received by the remote syslog listener. If I add a rsyslog forwarding as with the next section, only sftp events are sent out.
+The sftp events are not received by the remote syslog listener, pressumably via docker's syslog driver. If I add a rsyslog forwarding as with the next section, only sftp events are sent out but not the rest (eg. ssh attempts).
 
 ## For Ubuntu-Jessie (ie. original tomstockton's stuff)
 Just add forwarding:
