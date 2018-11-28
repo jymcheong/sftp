@@ -1,6 +1,6 @@
 # Changes
 
-Took the necessary stuff from https://github.com/tomstockton to merge into https://github.com/atmoz/sftp/tree/alpine so as to log ssh brute-force attempts:
+Took the necessary stuff from https://github.com/tomstockton/sftp to merge into https://github.com/atmoz/sftp/tree/alpine so as to log ssh brute-force attempts:
 
 ```
 docker run --log-driver syslog --log-opt syslog-address=tcp://YOURSYSLOGHOST:SYSLOGPORT \ ...
