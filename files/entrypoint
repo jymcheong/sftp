@@ -12,6 +12,9 @@ userConfPath="/etc/sftp/users.conf"
 userConfPathLegacy="/etc/sftp-users.conf"
 userConfFinalPath="/var/run/sftp/users.conf"
 
+
+chmod 700 /etc/ssh/ssh_host_rsa_key
+
 function log() {
     echo "[$0] $*" >&2
 }
