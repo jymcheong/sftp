@@ -8,6 +8,8 @@ HostKey /etc/ssh/ssh_host_rsa_key
 # See: https://github.com/atmoz/sftp/issues/11
 UseDNS no
 
+SyslogFacility AUTHPRIV
+
 # Limited access
 MaxStartups 100:30:200
 PermitRootLogin no
