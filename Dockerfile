@@ -19,9 +19,6 @@ COPY files/sshd_config /etc/ssh/sshd_config
 COPY files/create-sftp-user /usr/local/bin/
 COPY files/entrypoint /
 
-COPY files/bindfs   /bin/bindfs
-RUN chmod +x /bin/bindfs
-
 EXPOSE 22
 
 ENTRYPOINT ["/entrypoint"]
