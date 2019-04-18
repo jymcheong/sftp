@@ -14,6 +14,8 @@ userConfFinalPath="/var/run/sftp/users.conf"
 
 
 chmod 700 /etc/ssh/ssh_host_rsa_key
+rsyslogd
+exec /usr/bin/supervisord
 
 function log() {
     echo "[$0] $*" >&2
