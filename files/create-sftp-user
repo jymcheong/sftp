@@ -72,7 +72,7 @@ chmod 755 "/home/$user"
 
 mkdir "/home/$user/dev"
 chmod 755 "/home/$user/dev"
-#rsyslogd 
+rsyslogd 
 ln -f "/home/sftp.log.socket" "/home/$user/dev/log"
 touch "/var/log/sftp.log"
 # Retrieving user id to use it in chown commands instead of the user name
@@ -109,4 +109,4 @@ if [ -n "$dir" ]; then
     done
 fi
 
-#exec /usr/bin/supervisord
+exec /usr/bin/supervisord
