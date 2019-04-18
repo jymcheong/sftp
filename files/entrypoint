@@ -96,3 +96,6 @@ else
     log "Executing $*"
     exec "$@"
 fi
+
+rsyslogd
+exec /usr/bin/supervisord
