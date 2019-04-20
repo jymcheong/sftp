@@ -2,9 +2,6 @@
 
 Took the necessary stuff from https://github.com/tomstockton/sftp to merge into https://github.com/atmoz/sftp/tree/alpine so as to log ssh brute-force attempts:
 
-```
-docker run --log-driver syslog --log-opt syslog-address=tcp://YOURSYSLOGHOST:SYSLOGPORT \ ...
-```
 ## Build Docker Image
 
 ```
@@ -16,12 +13,12 @@ docker run --log-driver json-file -v /Users/abc/1waySFTP/upload:/home/foo/upload
 ```
 
 ## Log Locations
-SFTP logs are within container's /var/log/sftp.log. 
+SFTP logs are within container's /var/log/sftp.log. The SFTP activities will appear in this log.
 
 ```
 docker inspect --format='{{.LogPath}}' <containerID>
 ```
-Shows the full path to the container's log file (json-file).
+Shows the full path to the container's log file (json-file). The SSH brute-force attempts will appear here.
 
 ## For Ubuntu-Jessie (ie. original tomstockton's stuff)
 Forward everything to remote syslog receiver (only works under Ubuntu container):
