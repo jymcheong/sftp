@@ -29,9 +29,7 @@ Forward everything to remote syslog receiver (only works under Ubuntu container)
 # Create an additional socket for some of the sshd chrooted users.
 $AddUnixListenSocket /home/sftp.log.socket
 # Log internal-sftp in a separate file
-*.* action(type="omfwd" target="192.168.0.253" port="5514" protocol="tcp")
 ```
-The initial events are from docker syslog driver. On my mac, any ssh attempt to the docker sftp will cause the syslog driver to fail. After a while, the rsyslog forwarding takes over.
 
 # SFTP
 
