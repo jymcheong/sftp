@@ -7,11 +7,13 @@ docker run --log-driver syslog --log-opt syslog-address=tcp://YOURSYSLOGHOST:SYS
 ```
 ## Build Docker Image
 
-`docker build -t YOURTAG .`
+```
+docker build -t YOURTAG .
+```
 
-So let's say the syslog server is 192.168.0.129, use the new image:
-
-`docker run --log-driver json-file -v /Users/abc/1waySFTP/upload:/home/foo/upload -p 3333:22 -d YOURTAG foo:pass:1001`
+```
+docker run --log-driver json-file -v /Users/abc/1waySFTP/upload:/home/foo/upload -p 3333:22 -d YOURTAG foo:pass:1001
+```
 
 ## Log Locations
 SFTP logs are within container's /var/log/sftp.log. 
