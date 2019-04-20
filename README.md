@@ -11,10 +11,15 @@ docker run --log-driver syslog --log-opt syslog-address=tcp://YOURSYSLOGHOST:SYS
 
 So let's say the syslog server is 192.168.0.129, use the new image:
 
-`docker run --log-driver syslog --log-opt syslog-address=tcp://192.168.0.129:5514 -v /Users/jymcheong/1waySFTP/logs:/home/foo/upload -p 3333:22 -d YOURTAG foo:pass:1001`
+`docker run --log-driver json-file -v /Users/abc/1waySFTP/upload:/home/foo/upload -p 3333:22 -d YOURTAG foo:pass:1001`
 
-## Limitations
-Only sftp events are sent out but not other ssh attempts when using Alpine linux containers. 
+## Log Locations
+SFTP logs are within container's /var/log/sftp.log. 
+
+```
+docker inspect --format='{{.LogPath}}' <containerID>
+```
+Shows the full path to the container's log file (json-file).
 
 ## For Ubuntu-Jessie (ie. original tomstockton's stuff)
 Forward everything to remote syslog receiver (only works under Ubuntu container):
