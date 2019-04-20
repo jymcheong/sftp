@@ -20,13 +20,6 @@ docker inspect --format='{{.LogPath}}' <containerID>
 ```
 Shows the full path to the container's log file (json-file). The SSH brute-force attempts will appear here.
 
-## For Ubuntu-Jessie (ie. original tomstockton's stuff)
-Forward everything to remote syslog receiver (only works under Ubuntu container):
-```
-# Create an additional socket for some of the sshd chrooted users.
-$AddUnixListenSocket /home/sftp.log.socket
-# Log internal-sftp in a separate file
-```
 
 # SFTP
 
