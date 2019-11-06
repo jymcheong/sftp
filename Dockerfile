@@ -10,7 +10,7 @@ RUN echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /et
     apk add --no-cache bash shadow@community openssh openssh-sftp-server rsyslog supervisor && \
     sed -i 's/GROUP=1000/GROUP=100/' /etc/default/useradd && \
     mkdir -p /var/run/sshd && \
-    rm -f /etc/ssh/ssh_host_*key*
+    rm -f /etc/ssh/ssh_host_*key* && \
     sed -i -e 's/^root::/root:!:/' /etc/shadow
 
 COPY files/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
