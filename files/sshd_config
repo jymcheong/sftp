@@ -9,6 +9,8 @@ HostKey /etc/ssh/ssh_host_rsa_key
 UseDNS no
 
 SyslogFacility AUTHPRIV
+ClientAliveInterval 600
+ClientAliveCountMax 3
 
 # Limited access
 MaxStartups 100:30:200
